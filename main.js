@@ -69,14 +69,14 @@
 // let qua = (5 * 9);
 // let quo = (5 / 9);
 
-// // elevamento a potenza
+//  elevamento a potenza
 // let paperone = 5 ** 3; 
-// // ----------------------------------
+//  ----------------------------------
 
-// // operazione modulo = dice il resto dell'operazione, ad esempio 6 diviso 2 = 0, si possono usare per capire se il num è pari o dispari
+//  operazione modulo = dice il resto dell'operazione, ad esempio 6 diviso 2 = 0, si possono usare per capire se il num è pari o dispari
 // let basettoni = 6 % 2;      
 // let gambaDiLegno = 8 % 2;
-// // -----------------------------------
+//  -----------------------------------
 
 // console.log(qui);
 // console.log(qua);
@@ -89,11 +89,11 @@
 // let ilNumeroPiuPiccolo = -Infinity;
 // let ilNumeroPiuGrande = Infinity;
 
-// // per operazioni non standard si usa Math (sqrt ad esempio è la radice quadrata)
+//  per operazioni non standard si usa Math (sqrt ad esempio è la radice quadrata)
 
 // const paperoga = Math.sqrt(16); // Libreria Math per tutte le operazioni non comprese nello standard ES (ecma script)
 // console.log(paperoga);
-// // --------------------------------------------------
+// --------------------------------------------------
 
 // const rockerduck = 'pippo' / 3;
 // console.log(rockerduck);   
@@ -103,30 +103,30 @@
 // Boolean -------------------------------------
 
 // const etabeta = true;
-// // console.log(etabeta);
+//  console.log(etabeta);
 
-// // ! è il not  !true => false;
-// //             !false => true;
+// ! è il not  !true => false;
+//              !false => true;
 
-// // && è and    true && true => true
-//  //               true && false => false
-//  //               false && true => false
-// //                false && false => false
+//  && è and    true && true => true
+//                 true && false => false
+//                 false && true => false
+//                 false && false => false
 
 // const gastone = false;
 
 // console.log(etabeta && gastone);
 // console.log(etabeta && !gastone);
 
-// //   ||  è or  true || true => true 
-// //             true || false => true      
-// //                false || true => true
-// //                false || false => true
+//    ||  è or  true || true => true 
+//             true || false => true      
+//                 false || true => true
+//                false || false => true
 
 // console.log(etabeta || gastone);
 // console.log(!etabeta || gastone);
 
-//              // true 
+                // true 
 // console.log((etabeta || gastone) && etabeta);
 
 
@@ -175,25 +175,25 @@
 // const ciccio = 24;
 // const joseCarioca = '12';
 
-// // > (maggiore)
-// // >= (maggiore o uguale)
+//  > (maggiore)
+// >= (maggiore o uguale)
 
 // console.log(ciccio > nonnaPapera);
 
 
-// // < (minore)
-// // >= (minore o uguale)
+//  < (minore)
+//  >= (minore o uguale)
 
 // console.log(ciccio < nonnaPapera);
 
-// // != (diverso) (non usare questo)
-// // !== (diverso)
+//  != (diverso) (non usare questo)
+//  !== (diverso)
 
 
 // console.log(ciccio !== nonnaPapera);
 
-// // == (uguale con cast (cast è una sorta di conversione))
-// // === (uguale stretto)
+//  == (uguale con cast (cast è una sorta di conversione))
+//  === (uguale stretto)
 
 // console.log(nonnaPapera == joseCarioca);  //(mai usare questo)
 // console.log(nonnaPapera === joseCarioca);
@@ -248,15 +248,15 @@
 // const isJasmineDivisibleBy3 = jasmine % 3 === 0;
 // const isJasmineDivisibleBy5 = jasmine % 5 === 0;
 
-// // if (isJasmineDivisibleBy3 && isJasmineDivisibleBy5) {           //qui diciamo: jasmine è divisibile per 3 e per 5?
-// //     alert('FIZZBUZZ');
-// // } else if (isJasmineDivisibleBy3){                               // gli else dicono " se entri in uno ignora tutti gli altri"
-// //     alert('FIZZ');
-// // } else if (isJasmineDivisibleBy5){
-// //     alert('BUZZ');
-// // } else {
-// //    alert(jasmine);
-// // }
+//  if (isJasmineDivisibleBy3 && isJasmineDivisibleBy5) {           //qui diciamo: jasmine è divisibile per 3 e per 5?
+//     alert('FIZZBUZZ');
+// } else if (isJasmineDivisibleBy3){                               // gli else dicono " se entri in uno ignora tutti gli altri"
+//      alert('FIZZ');
+//  } else if (isJasmineDivisibleBy5){
+//      alert('BUZZ');
+//  } else {
+//     alert(jasmine);
+//  }
   
 
 // if (isJasmineDivisibleBy3 && isJasmineDivisibleBy5) {           
