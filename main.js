@@ -171,32 +171,126 @@
 
 // OPERATORI DI CONFRONTO  (ci aiutano a confrontare gli elementi e di solito restituiscono booleani)------------------------------------
 
-const nonnaPapera = 12;
-const ciccio = 24;
-const joseCarioca = '12';
+// const nonnaPapera = 12;
+// const ciccio = 24;
+// const joseCarioca = '12';
 
-// > (maggiore)
-// >= (maggiore o uguale)
+// // > (maggiore)
+// // >= (maggiore o uguale)
 
-console.log(ciccio > nonnaPapera);
-
-
-// < (minore)
-// >= (minore o uguale)
-
-console.log(ciccio < nonnaPapera);
-
-// != (diverso) (non usare questo)
-// !== (diverso)
+// console.log(ciccio > nonnaPapera);
 
 
-console.log(ciccio !== nonnaPapera);
+// // < (minore)
+// // >= (minore o uguale)
 
-// == (uguale con cast (cast è una sorta di conversione))
-// === (uguale stretto)
+// console.log(ciccio < nonnaPapera);
 
-console.log(nonnaPapera == joseCarioca);  //(mai usare questo)
-console.log(nonnaPapera === joseCarioca);
+// // != (diverso) (non usare questo)
+// // !== (diverso)
+
+
+// console.log(ciccio !== nonnaPapera);
+
+// // == (uguale con cast (cast è una sorta di conversione))
+// // === (uguale stretto)
+
+// console.log(nonnaPapera == joseCarioca);  //(mai usare questo)
+// console.log(nonnaPapera === joseCarioca);
+
+
+// CORTO CIRCUITO DEGLI OPERATORI ---------------------------------
+
+// let biancaNeve;
+
+// let ariel = 'ciao';
+
+// console.log(biancaNeve || ariel);   // in questo caso l'operatore logico controlla biancaNeve che è vuoto e passa ad ariel che contiene 'ciao' e assegna il valore 'ciao' contenuto in essa
+// la logica quindi è che controlla il primo se è true e se il primo è false controlla il secondo sennò si ferma
+
+
+// ALERT E PROMPT -------------------------------
+
+// alert('ciao a tutti!');
+
+// const elsa = prompt('come ti chiami?');
+// console.log(elsa);               // il prompt fa apparire una finestra e assegna il valore inserito nella finestra alla variabile
+
+
+// OPERATORI DI CONTROLLO --------------------------------------------------------
+// if else control flow
+
+// const mulan = prompt('dimmi un numero');
+
+// if (mulan < 50) {
+//     console.log('numero piccolo');
+// } else {
+//     console.log('numero grande');
+// }
+
+// console.log('fine del programma')
+
+// const mulan = prompt('dimmi un numero');
+
+
+// if (mulan % 2 === 0) {               // ad esempio qui controlla se il numero inserito dall'utente è pari
+//     alert('hai inserito un numero pari');
+// } else {
+//     alert('hai inserito un numero dispari');
+// }
+
+// console.log('fine del programma')
+
+
+// else if --------------------------------------
+
+// const jasmine = prompt('dimmi un numero');
+// const isJasmineDivisibleBy3 = jasmine % 3 === 0;
+// const isJasmineDivisibleBy5 = jasmine % 5 === 0;
+
+// // if (isJasmineDivisibleBy3 && isJasmineDivisibleBy5) {           //qui diciamo: jasmine è divisibile per 3 e per 5?
+// //     alert('FIZZBUZZ');
+// // } else if (isJasmineDivisibleBy3){                               // gli else dicono " se entri in uno ignora tutti gli altri"
+// //     alert('FIZZ');
+// // } else if (isJasmineDivisibleBy5){
+// //     alert('BUZZ');
+// // } else {
+// //    alert(jasmine);
+// // }
+  
+
+// if (isJasmineDivisibleBy3 && isJasmineDivisibleBy5) {           
+//     alert('FIZZBUZZ');
+// } if (isJasmineDivisibleBy3){                                       // in questo invece controlliamo tutte le condizioni 
+//     alert('FIZZ');
+// } if (isJasmineDivisibleBy5){
+//     alert('BUZZ');
+// } 
+
+
+// SWITCH CONTROL FLOW --------------------------------------
+
+const rapunzel = prompt('inserisci FIZZ, BUZZ O FIZZBUZZ');
+
+switch (rapunzel) {
+  case 'FIZZ':
+    alert('vuoi un numero divisibile per tre');
+    break;
+  case 'BUZZ':
+    alert('vuoi un numero divisibile per cinque');
+    break;
+  case 'FIZZBUZZ':
+    alert('vuoi un numero divisibile per tre e cinque');
+  default:
+    alert('hai sbagliato ad inserire la parola');
+    break;
+}
+
+
+
+
+
+
 
 
 
