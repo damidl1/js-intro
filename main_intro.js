@@ -270,25 +270,36 @@
 
 // SWITCH CONTROL FLOW --------------------------------------
 
-const rapunzel = prompt('inserisci FIZZ, BUZZ O FIZZBUZZ');
+// const rapunzel = prompt('inserisci FIZZ, BUZZ O FIZZBUZZ');
 
-switch (rapunzel) {
-  case 'FIZZ':
-    alert('vuoi un numero divisibile per tre');
-    break;
-  case 'BUZZ':
-    alert('vuoi un numero divisibile per cinque');
-    break;
-  case 'FIZZBUZZ':
-    alert('vuoi un numero divisibile per tre e cinque');
-    break;
-  default:
-    alert('hai sbagliato ad inserire la parola');
-    break;
-}
+// switch (rapunzel) {
+//   case 'FIZZ':
+//     alert('vuoi un numero divisibile per tre');
+//     break;
+//   case 'BUZZ':
+//     alert('vuoi un numero divisibile per cinque');
+//     break;
+//   case 'FIZZBUZZ':
+//     alert('vuoi un numero divisibile per tre e cinque');
+//     break;
+//   default:
+//     alert('hai sbagliato ad inserire la parola');
+//     break;
+// }
 
+// const num = prompt('inserisci un numero');
 
+// if (num % 2 === 0) {
+//   alert('hai inserito un numero divisibile per 2!');
+// } else if (num % 3 === 0) {
+//   alert('hai inserito un numero divisibile per 3!');
+// } else if (num % 5 === 0) {
+//   alert('hai inserito un numero divisibile per 5!');
+// } else {
+//    alert('hai inserito un numero sbagliato!'); 
+//   }
 
+  
 
 
 
