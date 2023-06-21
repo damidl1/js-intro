@@ -203,14 +203,41 @@
 
 // VERSIONE EASY MA COME VUOLE IL LIBRO
 
+// let chessboard = '';
+
+// for (let i = 0; i < 8; i++) {
+//     if (i % 2 === 0) {
+//         chessboard += ' # # # #\n'                 // questo è la stessa cosa di scrivere chessboard = chessboard + ' # # # #\n' 
+//     } else { 
+//         chessboard += '# # # #\n'
+//     }
+// }
+
+// console.log(chessboard);
+
+// VERSIONE MENO EASY
+
+const size = 4;
+
 let chessboard = '';
 
-for (let i = 0; i < 8; i++) {
-    if (i % 2 === 0) {
-        chessboard += ' # # # #\n'                 // questo è la stessa cosa di scrivere chessboard = chessboard + ' # # # #\n' 
-    } else { 
-        chessboard += '# # # #\n'
+for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+        // se i è pari {
+            // se j è pari {
+                //aggiungo a chessboard uno spazio
+            //} altrimenti {
+                //aggiungo a chessboard un cancelletto
+            //}
+        //} altrimenti {
+            // se j è pari {
+                //aggiungo a chessboard un cancelletto
+            //} altrimenti {
+                //aggiungo a chessboard uno spazio
+            //}
+        //}
     }
+    //aggiungo a chessboard uno \n
 }
 
 console.log(chessboard);
