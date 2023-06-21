@@ -134,7 +134,7 @@
 // STRING ----------------------------------------------
 
 // const orazio = 'io adoro javascript';
-//  console.log(orazio[9]);        //   per accedere alle lettere con gli InputDeviceInfo, gli spazi vanno contati
+//  console.log(orazio[9]);        //   per accedere alle lettere con gli indici, gli spazi vanno contati
 
 //  const clarabella = 'perchè non sono sano di mente'
 //   console.log(orazio + ' ' + clarabella);  //  concatenazione stringa
@@ -281,6 +281,7 @@ switch (rapunzel) {
     break;
   case 'FIZZBUZZ':
     alert('vuoi un numero divisibile per tre e cinque');
+    break;
   default:
     alert('hai sbagliato ad inserire la parola');
     break;
