@@ -207,3 +207,43 @@
 // esercizio 7: definire una funzione reverseString che data una stringa la restituisca al contrario
 // esempio: 'casa rosa' => 'asor asac'
 
+
+
+// SVOLGIMENTO ESERCIZI --------------------------------
+
+// 1)  
+
+
+
+// function pow(number){
+//     for (let i = 0; = i < number; i++) {
+//         if () 
+//         {
+
+//         }
+        
+//     }
+// }
+
+// const result = 
+
+
+// 2)
+
+// function correctCase(selectedString) {
+//     const char = selectedString[0];
+//     let upperCaseChar = char.toUpperCase(selectedString);
+//     return upperCaseChar;
+// }
+
+// const upperChar = correctCase('viva gli esercizi su javascript');
+// console.log(upperChar);
+
+
+function correctCase(selectedString) {
+    const char = selectedString[0]; 
+    const upperChar = correctCase('viva gli esercizi su javascript');
+    let upperCaseChar = char.toUpperCase(selectedString);
+    return upperCaseChar;
+}
+console.log(upperChar);
