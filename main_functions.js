@@ -282,3 +282,17 @@ console.log(clamp(12, 1, 100));
 // 6)
 
 
+function ellipse(string) {
+  const maxLength = 22;
+  if (string.length < maxLength) {
+    return string;
+  } else {
+    const stringDotted = string.slice(0, maxLength - 3) + "...";
+    return stringDotted;
+  }
+}
+
+const inputString2 = 'imparare a programmare';
+const shortString = ellipse(inputString2);
+console.log(shortString);
+
