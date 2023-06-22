@@ -277,3 +277,8 @@ function clamp(value, min, max) {
 console.log(clamp(1, 5, 15));
 console.log(clamp(12, 3, 10));
 console.log(clamp(12, 1, 100));
+
+
+// 6)
+
+
