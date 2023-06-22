@@ -240,10 +240,23 @@
 // console.log(upperChar);
 
 
+// function correctCase(selectedString) {
+//     const char = selectedString[0]; 
+//     const upperChar = correctCase('viva gli esercizi su javascript');
+//     let upperCaseChar = char.toUpperCase(selectedString);
+//     return upperCaseChar;
+// }
+// console.log(upperChar);
+
+
 function correctCase(selectedString) {
-    const char = selectedString[0]; 
-    const upperChar = correctCase('viva gli esercizi su javascript');
-    let upperCaseChar = char.toUpperCase(selectedString);
-    return upperCaseChar;
-}
-console.log(upperChar);
+    const firstChar = selectedString[0];
+    const restOfString = selectedString.slice(1);
+    const upperCaseChar = firstChar.toUpperCase();
+    return upperCaseChar + restOfString;
+  }
+  
+  const inputString = 'viva gli esercizi su javascript';
+  const correctedString = correctCase(inputString);
+  console.log(correctedString);
+  
