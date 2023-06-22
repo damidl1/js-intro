@@ -260,3 +260,20 @@ function correctCase(selectedString) {
   const correctedString = correctCase(inputString);
   console.log(correctedString);
   
+
+
+//   4)
+
+function clamp(value, min, max) {
+  if (value < min) {
+    return min;
+  } else if (value > max) {
+    return max;
+  } else {
+    return value;
+  }
+}
+
+console.log(clamp(1, 5, 15));
+console.log(clamp(12, 3, 10));
+console.log(clamp(12, 1, 100));
