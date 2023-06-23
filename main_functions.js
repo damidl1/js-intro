@@ -264,19 +264,33 @@ function correctCase(selectedString) {
 
 //   4)
 
-function clamp(value, min, max) {
-  if (value < min) {
+// function clamp(value, min, max) {
+//   if (value < min) {
+//     return min;
+//   } else if (value > max) {
+//     return max;
+//   } else {
+//     return value;
+//   }
+// }
+
+// alternativa identica al codice sopra
+
+
+function clamp(value, min, max){
+  if (value < min){
     return min;
-  } else if (value > max) {
-    return max;
-  } else {
-    return value;
   }
+
+  if (value > max){
+    return max;
+  }
+  return value;
 }
 
-console.log(clamp(1, 5, 15));
-console.log(clamp(12, 3, 10));
-console.log(clamp(12, 1, 100));
+console.log('clamp', clamp(1, 5, 15));
+console.log('clamp', clamp(12, 3, 10));
+console.log('clamp', clamp(12, 1, 100));
 
 
 // 6)
@@ -295,4 +309,68 @@ function ellipse(string) {
 const inputString2 = 'imparare a programmare';
 const shortString = ellipse(inputString2);
 console.log(shortString);
+
+
+
+// 3)
+
+
+function min( firstNumber, secondNumber ) {
+  if ( firstNumber > secondNumber ) {
+    return secondNumber;
+  } else {
+    return firstNumber;
+  }
+}
+
+console.log('min', min(5,10));
+
+
+ // sintassi alternativa a quella sopra con operatore ternario
+
+
+function min( firstNumber, secondNumber ) {                
+const minimum = firstNumber > secondNumber ? secondNumber : firstNumber;  // vuol dire: se questa condizione è vera dentro minimum ci va secondNumber, se è falsa ci va firstNumber
+return minimum;
+}
+
+console.log('min', min(5,10));
+
+
+//altra sintassi uguale a questa sopra ancora più corta
+
+
+function min( firstNumber, secondNumber ) {                
+  return firstNumber > secondNumber ? secondNumber : firstNumber;  
+}
+  
+console.log('min', min(5,10));
+
+
+
+// 5)
+
+
+function chessBoard(size) {
+ 
+  let chessboardString = '';
+  
+  for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+      if ((i - j) % 2 === 0) {
+        chessboardString = chessboardString + "□";
+      }
+      if ((i - j) % 2 !== 0) {
+        chessboardString = chessboardString + "■";
+      }
+    }
+    chessboardString = chessboardString + "\n";
+  }
+
+  return chessboardString;
+}
+
+console.log('chessboard', chessBoard(19));
+
+
 
