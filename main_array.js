@@ -77,18 +77,18 @@
 
 // const paperino = [2, 5, -4, 2000, 7, 34];
 
-// function multiplyArrayBy2(selectedArray) {
+function multiplyArrayBy2(selectedArray) {
 
-//     const newArray = [];
+    const newArray = [];
     
-//     for (let i = 0; i < selectedArray.length; i++) {
+    for (let i = 0; i < selectedArray.length; i++) {
       
-//         const element = selectedArray[i];
-//         const newElement = element * 2;
-//         newArray.push(newElement);
-//     }
-//     return newArray;
-// }
+        const element = selectedArray[i];
+        const newElement = element * 2;
+        newArray.push(newElement);
+    }
+    return newArray;
+}
 
 // console.log('multiply by 2', multiplyArrayBy2(paperino));
 
@@ -143,29 +143,29 @@
 
 
 
-const paperoga = [3, 5, 6, 9, 8, 111, -3, -8, 0];
+ // const paperoga = [3, 5, 6, 9, 8, 111, -3, -8, 0];
 
 
-function removeEven(selectedArray) {                    // rimuove i numeri pari
+// function removeEven(selectedArray) {                    // rimuove i numeri pari
   
-  const newArray = [];
+//   const newArray = [];
 
-  for (let i = 0; i < selectedArray.length; i++) {
-    const element = selectedArray[i];
+//   for (let i = 0; i < selectedArray.length; i++) {
+//     const element = selectedArray[i];
 
-    if (element % 2 !== 0) {
-      newArray.push(element);
-    }
-  }
-  return newArray;
-}
+//     if (element % 2 !== 0) {
+//       newArray.push(element);
+//     }
+//   }
+//   return newArray;
+// }
 
-   console.log('remove even', removeEven(paperoga));
+//    console.log('remove even', removeEven(paperoga));
 
 
 
-function removeNegative(selectedArray) {                    //rimuovere i negativi
-    const newArray = [];
+ function removeNegative(selectedArray) {                    //rimuovere i negativi
+     const newArray = [];
 
   for (let i = 0; i < selectedArray.length; i++) {
     const element = selectedArray[i];
@@ -173,18 +173,51 @@ function removeNegative(selectedArray) {                    //rimuovere i negati
     if (element >= 0) {
       newArray.push(element);
     }
-  }
-  return newArray;
+   }
+   return newArray;
+ }
+
+// console.log('remove negative', removeNegative(paperoga));
+
+
+
+
+// FUNCTION COMPOSITION (funzione per mettere insieme una filtering e una mapping)
+// abbiamo usato due funzioni che abbiamo creato prima
+
+
+const qui = [3, 5, 6, 9, 8, 111, -3, -8, 0, 20, -10000];
+
+function removeNegativeAndMultiplyBy2(selectedArray) {
+ 
+    // const arrayWithoutNegative = removeNegative(selectedArray);
+    // const arrayMultiplied = multiplyArrayBy2(arrayWithoutNegative);
+  
+    // return arrayMultiplied;
+
+    return multiplyArrayBy2(removeNegative(selectedArray));      // fa la stessa cosa del codice sopra
 }
 
-console.log('remove negative', removeNegative(paperoga));
+console.log(removeNegativeAndMultiplyBy2(qui));
 
 
 
 
+// ESERCIZI ---------------------------------------------------------------
+
+const numbersArray = [23, 45, 12, -8, -6, 23, 45, 1, 45, 34, 2];
+const stringsArray = ['23', 'pippo', 'pluto', 'la casa blu', 'osvaldo', '', 'porchetta'];
 
 
+// esercizio 1: mapping function che prende in input un array di numeri 
+// e restituisce un array con tutti i numeri diminuiti di uno
 
+// esercizio 2: mapping function che prende in input un array di numeri 
+// e restituisce un array con il valore assoluto dei numeri
+
+// esercizio 3: mapping function che prende in input un array di numeri 
+// e restituisce un array di stringhe con scritto 'PARI' se il numero corrispondente è pari
+// o 'DISPARI' se il numero corrispondente è dispari
 
 
 
