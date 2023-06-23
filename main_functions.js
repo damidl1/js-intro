@@ -249,17 +249,36 @@
 // console.log(upperChar);
 
 
+// function correctCase(selectedString) {
+//     const firstChar = selectedString[0];
+//     const restOfString = selectedString.slice(1);
+//     const upperCaseChar = firstChar.toUpperCase();
+//     return upperCaseChar + restOfString;
+//   }
+  
+//   const inputString = 'viva gli esercizi su javascript';
+//   const correctedString = correctCase(inputString);
+//   console.log(correctedString);
+  
+
+// alternativa scritta in aula
+
 function correctCase(selectedString) {
-    const firstChar = selectedString[0];
-    const restOfString = selectedString.slice(1);
-    const upperCaseChar = firstChar.toUpperCase();
-    return upperCaseChar + restOfString;
+  if (selectedString === undefined) {
+    return "";
   }
-  
-  const inputString = 'viva gli esercizi su javascript';
-  const correctedString = correctCase(inputString);
-  console.log(correctedString);
-  
+
+  const firstChar = selectedString[0];
+  const firstCharUpper = firstChar.toUpperCase();
+  const restOfTheString = selectedString.slice(1);
+  const newString = firstCharUpper + restOfTheString;
+
+  return newString;
+}
+
+console.log('correct case', correctCase('viva pippo'));
+
+
 
 
 //   4)
@@ -296,19 +315,59 @@ console.log('clamp', clamp(12, 1, 100));
 // 6)
 
 
-function ellipse(string) {
-  const maxLength = 22;
-  if (string.length < maxLength) {
-    return string;
+// function ellipse(string) {
+//   const maxLength = 22;
+//   if (string.length < maxLength) {
+//     return string;
+//   } else {
+//     const stringDotted = string.slice(0, maxLength - 3) + "...";
+//     return stringDotted;
+//   }
+// }
+
+// const inputString2 = 'imparare a programmare';
+// const shortString = ellipse(inputString2);
+// console.log(shortString);
+
+
+// alternativa scritta in aula
+
+
+function ellipse(selectedString){
+  if (selectedString.length < 20) {
+    return selectedString;
   } else {
-    const stringDotted = string.slice(0, maxLength - 3) + "...";
-    return stringDotted;
+    
+    const shortString = selectedString.slice(0, 20);
+    const ellipsedString = shortString + '...' 
+    return ellipsedString;
   }
+   
+  
 }
 
-const inputString2 = 'imparare a programmare';
-const shortString = ellipse(inputString2);
-console.log(shortString);
+console.log('ellipse', ellipse('nel mezzo del cammin di nostra vita'));
+
+
+// alternativa per dire dopo quanti caratteri tagliare
+
+
+function ellipse(selectedString, size = 20, endString = '...'){             // ... default se non passo altri parametri ma se metto *** passa ***
+  if (selectedString.length < size) {
+    return selectedString;
+  } else {
+    
+    const shortString = selectedString.slice(0, size);
+    const ellipsedString = shortString + endString; 
+    return ellipsedString;
+  }
+   
+  
+}
+
+console.log('ellipse', ellipse('nel mezzo del cammin di nostra vita'));
+console.log('ellipse', ellipse('nel mezzo del cammin di nostra vita', 3));
+console.log('ellipse', ellipse('nel mezzo del cammin di nostra vita', 10, '***'));
 
 
 
@@ -373,4 +432,36 @@ function chessBoard(size) {
 console.log('chessboard', chessBoard(19));
 
 
+// 7)
+
+
+function stringReverse(selectedString) {
+  
+  let newString = '';     // questa variabile è un accumulator, serve per fare da contenitore per metterci come in questo esempio i caratteri
+
+  for (let i = selectedString.length - 1; i >= 0; i--) {
+    const char = selectedString[i];
+    newString = newString + char;      // si può anche scrivere newString += char;
+  }
+  return newString;
+}
+
+console.log('reverse', stringReverse('la casa rosa'));
+
+
+
+// 1)
+
+
+function pow(base, exponent){
+
+  let result = 1;    // facendo questo la moltiplicazione della potenza sarebbe 1 * 5 * 5 * 5 * 5
+
+    for (let i = 0; i < exponent; i++) {
+      result = result * base;
+    }
+  return result;
+}
+
+console.log('pow', pow(5, 4));
 
