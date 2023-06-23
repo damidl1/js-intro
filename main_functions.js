@@ -240,12 +240,59 @@
 // console.log(upperChar);
 
 
-function correctCase(selectedString) {
-    const char = selectedString[0]; 
-    const upperChar = correctCase('viva gli esercizi su javascript');
-    let upperCaseChar = char.toUpperCase(selectedString);
-    return upperCaseChar;
-}
-console.log(upperChar);
+// function correctCase(selectedString) {
+//     const char = selectedString[0]; 
+//     const upperChar = correctCase('viva gli esercizi su javascript');
+//     let upperCaseChar = char.toUpperCase(selectedString);
+//     return upperCaseChar;
+// }
+// console.log(upperChar);
 
+
+function correctCase(selectedString) {
+    const firstChar = selectedString[0];
+    const restOfString = selectedString.slice(1);
+    const upperCaseChar = firstChar.toUpperCase();
+    return upperCaseChar + restOfString;
+  }
+  
+  const inputString = 'viva gli esercizi su javascript';
+  const correctedString = correctCase(inputString);
+  console.log(correctedString);
+  
+
+
+//   4)
+
+function clamp(value, min, max) {
+  if (value < min) {
+    return min;
+  } else if (value > max) {
+    return max;
+  } else {
+    return value;
+  }
+}
+
+console.log(clamp(1, 5, 15));
+console.log(clamp(12, 3, 10));
+console.log(clamp(12, 1, 100));
+
+
+// 6)
+
+
+function ellipse(string) {
+  const maxLength = 22;
+  if (string.length < maxLength) {
+    return string;
+  } else {
+    const stringDotted = string.slice(0, maxLength - 3) + "...";
+    return stringDotted;
+  }
+}
+
+const inputString2 = 'imparare a programmare';
+const shortString = ellipse(inputString2);
+console.log(shortString);
 
