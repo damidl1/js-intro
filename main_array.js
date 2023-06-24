@@ -77,18 +77,18 @@
 
 // const paperino = [2, 5, -4, 2000, 7, 34];
 
-function multiplyArrayBy2(selectedArray) {
+// function multiplyArrayBy2(selectedArray) {
 
-    const newArray = [];
+//     const newArray = [];
     
-    for (let i = 0; i < selectedArray.length; i++) {
+//     for (let i = 0; i < selectedArray.length; i++) {
       
-        const element = selectedArray[i];
-        const newElement = element * 2;
-        newArray.push(newElement);
-    }
-    return newArray;
-}
+//         const element = selectedArray[i];
+//         const newElement = element * 2;
+//         newArray.push(newElement);
+//     }
+//     return newArray;
+// }
 
 // console.log('multiply by 2', multiplyArrayBy2(paperino));
 
@@ -243,7 +243,8 @@ function multiplyArrayBy2(selectedArray) {
 
 
 
-// Svolgimento esercizio 1
+// Svolgimento esercizio 1 mapping function che prende in input un array di numeri
+//    e restituisce un array con tutti i numeri diminuiti di uno
 
 // const numbersArray = [23, 45, 12, -8, -6, 23, 45, 1, 45, 34, 2];
 
@@ -262,7 +263,10 @@ function multiplyArrayBy2(selectedArray) {
 // console.log('decrease by 1', decreaseArrayBy1(numbersArray));
 
 
-// Svolgimento esercizio 2
+
+
+// Svolgimento esercizio 2 mapping function che prende in input un array di numeri
+//    e restituisce un array con i il valore assoluto dei numeri
 
 
 // const numbersArray = [23, 45, 12, -8, -6, 23, 45, 1, 45, 34, 2];
@@ -283,49 +287,186 @@ function multiplyArrayBy2(selectedArray) {
 
 
 
-// Svolgimento esercizio 3
 
 
-const numbersArray = [23, 45, 12, -8, -6, 23, 45, 1, 45, 34, 2];
+// Svolgimento esercizio 3 mapping function che prende in input un array di numeri
+//    e restituisce un array di strighe con scritto 'PARI' se il numero
+//    corrispondente è pari o 'DISPARI' se il numero corrispondente è dispari
 
-function (selectedArray) {
-    const newArray = [];
+
+
+// const evenOrOddArray = [23, 45, 12, -8, -6, 23, 45, 1, 45, 34, 2];
+
+// function evenOrOdd(evenOrOddArray) {
+//     const newArray = [];
       
-    for (let i = 0; i < selectedArray.length; i++) {
+//     for (let i = 0; i < evenOrOddArray.length; i++) {
+//       const number = evenOrOddArray[i];
+//       if (number % 2 === 0) {
+//         newArray.push('PARI');
+//       } else {
+//         newArray.push('DISPARI');
+//       }
+//     }
+//     return newArray;
+//   }
+//   console.log('Even or odd:', evenOrOdd(evenOrOddArray));
+
+
+
+
+// Svolgimento esercizio 4 mapping function che prende in input un array di stringhe
+//    e le restituisce tutte minuscole
+
+  
+//   const stringsArray = ['23', 'pippo', 'pluto', 'la casa blu', 'osvaldo', '', 'porchetta'];
+
+  
+//   function lowerCaseArray(stringsArray) {
+//     const newArray = [];
+
+//     for (let i = 0; i < stringsArray.length; i++) {
+//       const lowercaseStrings = stringsArray[i].toLowerCase();
+//       newArray.push(lowercaseStrings);
+//     }
+//     return newArray;
+//   }
+//   console.log("Lower Case Array:", lowerCaseArray(stringsArray));
+
+
+  // Svolgimento esercizio 5 mapping function che prende in input un array di stringhe
+  //    e restituisce un array di numeri con le lunghezze delle stringhe
+  
+
+//   const stringsArray = ['23', 'pippo', 'pluto', 'la casa blu', 'osvaldo', '', 'porchetta'];
+
+
+//     function checkArrayLength(stringsArray) {
+//     const lengthsArray = [];
+
+//     for (let i = 0; i < stringsArray.length; i++) {
       
-        const element = selectedArray[i];
-        const newElement = Math.abs(selectedArray[i]);
-        newArray.push(newElement);
+//         const lengthOfArray = stringsArray[i].length;
+//         lengthsArray.push(lengthOfArray);
+    
+//     }
+//     return lengthsArray;
+//   }
+//   console.log("Check array length:", checkArrayLength(stringsArray));
+
+
+
+
+// Svolgimento esercizio 6 mapping function che prende in input un array di strighe
+//    e restituisce le stringhe in formato camelCase
+
+
+const stringsArray = ['23', 'pippo', 'pluto', 'la casa blu', 'osvaldo', '', 'porchetta'];
+
+
+function toCamelCaseString(stringsArray) {
+    const ccString = [];
+
+    for (let i = 0; i < stringsArray.length; i++) {
+        const string = stringsArray[i];
+
+        const words = string.split(' ');
+
+        const firstWord = words.shift().toLowerCase();
+
+        let camelCaseWords = '';
+
+        for (let j = 0; j < words.length; j++) {
+            const word = words[j];
+
+            const camelCaseWord = word[0].toUpperCase() + word.slice(1);
+            camelCaseWords += camelCaseWord;
+            
+        }
+        const camelCaseString = firstWord + camelCaseWords;
+
+        ccString.push(camelCaseString);
     }
-    return newArray;
-  }
-  console.log('absolute value', absoluteValuesArray(numbersArray));
+    return ccString;
+}
+
+console.log('Camel case string: ', toCamelCaseString(stringsArray));
+
+
+
+
+
+
+
+// Svolgimento esercizio 7 filter function che prende in input un array di stringhe
+//    e restituisce solo quelle più lunghe di tre caratteri
+
+
+
+
+// const stringsArray = ['23', 'pippo', 'pluto', 'la casa blu', 'osvaldo', '', 'porchetta'];
+
+
+// function filterStringsByLength(stringsArray) {
+//   const filteredArray = [];
+
+//   for (let i = 0; i < stringsArray.length; i++) {
+//     const string = stringsArray[i];
+//     if (string.length > 3) {
+//       filteredArray.push(string);
+//     }
+//   }
+//   return filteredArray;
+// }
+// console.log("Filtered Array: ", filterStringsByLength(stringsArray));
+
+
+
+
+
+
+// Svolgimento esercizio 8 filter function che prende in input un array di stringhe
+//    e restituisce solo quelle che contengono la lettera 'p'
+
+
+
+// const stringsArray = ['23', 'pippo', 'pluto', 'la casa blu', 'osvaldo', '', 'porchetta'];
+
+
+// function filterStringsByLetterP(stringsArray) {
+//   const filteredArray = [];
+
+//   for (let i = 0; i < stringsArray.length; i++) {
+//     const pString = stringsArray[i];
+//     if (pString.includes('p')) {
+//       filteredArray.push(pString);
+//     }
+//   }
+//   return filteredArray;
+// }
+// console.log("Filtered Array: ", filterStringsByLetterP(stringsArray));
+
+
+
+
+
+// Svolgimento esercizio 9 filter function che prende in input un array di numeri
+//    e restituisce i positivi divisibili per 3
+
+
+
+// const numbersArray = [23, 45, 12, -8, -6, 23, 45, 1, 45, 34, 2];
+
+
+// function positivesDividedBy3(numbersArray) {
+//     const filteredArray = [];
   
-
-
-
-
-
-
-
-
-
-// function multiplyArrayBy2(selectedArray) {
-
-  //     const newArray = [];
-      
-  //     for (let i = 0; i < selectedArray.length; i++) {
-        
-  //         const element = selectedArray[i];
-  //         const newElement = element * 2;
-  //         newArray.push(newElement);
-  //     }
-  //     return newArray;
-  // }
-  
-  // console.log('multiply by 2', multiplyArrayBy2(paperino));
-
-
-
-
-
+//     for (let i = 0; i < numbersArray.length; i++) {
+//       const number = numbersArray[i];
+//       if (number > 0 && number %3 === 0) {
+//         filteredArray.push(number);
+//       }
+//     }
+//     return filteredArray;
+//   }
+//   console.log("Filtered Array: ", positivesDividedBy3(numbersArray));
