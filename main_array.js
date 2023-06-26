@@ -405,7 +405,7 @@
 const stringsArray = ['23', 'pippo', 'pluto', 'la casa blu', 'osvaldo', '', 'porchetta'];
 
 
-function toFirstCase(selectedWord) {               // prende la prima lettera e lo mette maiuscola, poi prende il resto della stringa con split e lo mette a fianco
+function toFirstCase(selectedWord) {          // prende la prima lettera e lo mette maiuscola, poi prende il resto della stringa con split e lo mette a fianco
     
     const firstChar = selectedWord[0];
     const firstCharUpper = firstChar.toUpperCase();
