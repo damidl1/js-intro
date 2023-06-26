@@ -5,7 +5,7 @@ const student = {name: 'Damiano', yob: 1993, isMarried: false}
 
 
 console.log(student.nome);     // per prendere il parametro nome
-console.log(student['anno']);  // per prendere i valori con le quadre
+console.log(student['yob']);  // per prendere i valori con le quadre
 
 
 student.address = 'taggia';    // per aggiungere un valore nuovo all'oggetto

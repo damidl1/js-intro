@@ -546,3 +546,276 @@ console.log(toCamelCaseAll(stringsArray));
 //     return filteredArray;
 //   }
 //   console.log("Filtered Array: ", positivesDividedBy3(numbersArray));
+
+
+
+
+
+
+// QUI SOTTO TUTTI GLI ESERCIZI SVOLTI IN AULA CON LE CORREZIONI
+
+
+
+// 1) mapping function che prende in input un array di numeri
+//    e restituisce un array con tutti i numeri diminuiti di uno
+
+// function minusOneAll(arrayOfNumbers){
+
+//     const tempArray = [];
+
+//     for (let i = 0; i < arrayOfNumbers.length; i++) {
+
+//         const element = arrayOfNumbers[i];
+        
+//         const newElement = element - 1;
+
+//         tempArray.push(newElement);
+        
+//     }
+
+//     return tempArray;
+
+//      for (let i = 0; i < arrayOfNumbers.length; i++) {
+        
+//         arrayOfNumbers[i] = arrayOfNumbers[i] -1
+        
+//      }
+
+//      return arrayOfNumbers;
+// }
+
+// console.log(minusOneAll(numbersArray));
+
+//  2) mapping function che prende in input un array di numeri
+//    e restituisce un array con i il valore assoluto dei numeri
+
+// function absoluteAll(arrayOfNumbers){
+
+//     const tempArray = [];
+
+//     for (let i = 0; i < arrayOfNumbers.length; i++) {
+
+//         const element = arrayOfNumbers[i];
+        
+//         inserire il codice quì
+//         const newElement = Math.abs(element);
+//         
+
+//         tempArray.push(newElement);
+        
+//     }
+
+//     return tempArray;
+
+// }
+
+// console.log(absoluteAll(numbersArray));
+
+//  3) mapping function che prende in input un array di numeri
+//     e restituisce un array di strighe con scritto 'PARI' se il numero
+// /   corrispondente è pari o 'DISPARI' se il numero corrispondente è dispari
+
+// function arrayToEvenOrOddStrings(arrayOfNumbers){
+
+//     const tempArray = [];
+
+//     for (let i = 0; i < arrayOfNumbers.length; i++) {
+
+//         const element = arrayOfNumbers[i];
+        
+        //inserire il codice quì
+//         let newElement;
+//         if (element % 2 === 0) {
+//             newElement = 'PARI'
+//         } else {
+//             newElement = 'DISPARI'
+//         }
+
+//         tempArray.push(newElement);
+        
+//     }
+
+//     return tempArray;
+
+// }
+
+// console.log(arrayToEvenOrOddStrings(numbersArray));
+
+//  4) mapping function che prende in input un array di stringhe
+//    e le restituisce tutte minuscole
+
+// function toLowerCaseAll(arrayOfStrings){
+
+//     const tempArray = [];
+
+//     for (let i = 0; i < arrayOfStrings.length; i++) {
+
+//         const element = arrayOfStrings[i];
+        
+//         inserire il codice quì
+//         const newElement = element.toLowerCase();
+
+    
+//         tempArray.push(newElement);
+        
+//     }
+
+//     return tempArray;
+
+// }
+
+// console.log(toLowerCaseAll(stringsArray));
+
+//  5) mapping function che prende in input un array di strighe
+//     e restituisce un array di numeri con le lunghezze delle stringhe
+
+// function fromStringArrayToLenghtArray(arrayOfStrings){
+
+//     const tempArray = [];
+
+//     for (let i = 0; i < arrayOfStrings.length; i++) {
+
+//         const element = arrayOfStrings[i];
+        
+//         inserire il codice quì
+//         let newElement;
+//         if (element === undefined) {
+//             newElement = -1;
+//             console.log('ALLARME!!')
+//         } else {
+//             newElement = element.length;
+//         }
+        
+//         tempArray.push(newElement);
+//     }
+
+//     return tempArray;
+
+// }
+
+// console.log(fromStringArrayToLenghtArray(stringsArray));
+
+//  6) mapping function che prende in input un array di strighe
+//     e restituisce le stringhe in formato camelCase
+
+// function toFirstCase(selectedWord){
+//     const firstChar = selectedWord[0];
+//     const firstCharUpper = firstChar.toUpperCase();
+//     const restOfTheString = selectedWord.slice(1);
+//     return firstCharUpper + restOfTheString;
+// }
+
+// function toCamelCase(selectedString){
+
+//     const lowerString = selectedString.toLowerCase();
+//     const wordsArray = lowerString.split(' ');
+//     if (wordsArray.length === 1) {
+//         return lowerString;
+//     }
+    
+//     let camelString = '';
+//     for (let i = 0; i < wordsArray.length; i++) {
+//         const element = wordsArray[i];
+//         if (i === 0) {
+//             camelString += element;
+//         } else {
+//             camelString += toFirstCase(element);
+//         }
+//     }
+
+//     return camelString;
+// }
+
+// function toCamelCaseAll(arrayOfStrings){
+//     const tempArray = [];
+
+//     for (let i = 0; i < arrayOfStrings.length; i++) {
+
+//         const element = arrayOfStrings[i];
+        
+//         const newElement = toCamelCase(element);
+        
+//         tempArray.push(newElement);
+//     }
+
+//     return tempArray;
+// }
+
+// console.log(toCamelCaseAll(stringsArray));
+
+//  7) filter function che prende in input un array di stringhe
+//     e restituisce solo quelle più lunghe di tre caratteri
+
+// function removeShorterThan3Chars(arrayOfStrings){
+
+//     const tempArray = [];
+
+//     for (let i = 0; i < arrayOfStrings.length; i++) {
+
+//         const element = arrayOfStrings[i];
+        
+//         inserire il codice quì
+//         if (element.length > 3) {
+//            tempArray.push(element) 
+//         }
+        
+//     }
+
+//     return tempArray;
+
+// }
+
+// console.log(removeShorterThan3Chars(stringsArray));
+
+//  8) filter function che prende in input un array di strighe
+//     e restituisce solo quelle che contengono la lettera 'p'
+
+// function removePEnemies(arrayOfStrings){
+
+//     const tempArray = [];
+
+//     for (let i = 0; i < arrayOfStrings.length; i++) {
+
+//         const element = arrayOfStrings[i];
+        
+//         inserire il codice quì
+//         if (element.toLowerCase().includes('p')) {
+//            tempArray.push(element) 
+//         }
+        
+//     }
+
+//     return tempArray;
+
+// }
+
+// console.log(removePEnemies(stringsArray));
+
+//  9) filter function che prende in input un array di numeri
+//     e restituisce i positivi divisibili per 3
+
+// function keepPositiveAndDivisibleBy3(arrayOfNumbers){
+
+//     const tempArray = [];
+
+//     for (let i = 0; i < arrayOfNumbers.length; i++) {
+
+//         const element = arrayOfNumbers[i];
+        
+//         inserire il codice quì
+//         if (element > 0 && element % 3 === 0) {
+//            tempArray.push(element) 
+//         }
+        
+//     }
+
+//     return tempArray;
+
+// }
+
+// console.log(keepPositiveAndDivisibleBy3(numbersArray));
+
+//  10) fare una copia della home del sito di AXIA FORMAZIONE
+
+
+// console.log(stringsArray.indexOf('taralluccio'));
