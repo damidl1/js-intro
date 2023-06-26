@@ -334,7 +334,10 @@
 //   console.log("Lower Case Array:", lowerCaseArray(stringsArray));
 
 
-  // Svolgimento esercizio 5 mapping function che prende in input un array di stringhe
+
+
+    
+   // Svolgimento esercizio 5 mapping function che prende in input un array di stringhe
   //    e restituisce un array di numeri con le lunghezze delle stringhe
   
 
@@ -357,45 +360,98 @@
 
 
 
+
+
+
 // Svolgimento esercizio 6 mapping function che prende in input un array di strighe
 //    e restituisce le stringhe in formato camelCase
+
+
+// const stringsArray = ['23', 'pippo', 'pluto', 'la casa blu', 'osvaldo', '', 'porchetta'];
+
+
+// function toCamelCaseString(stringsArray) {
+//     const ccString = [];
+
+//     for (let i = 0; i < stringsArray.length; i++) {
+//         const string = stringsArray[i];
+
+//         const words = string.split(' ');
+
+//         const firstWord = words.shift().toLowerCase();
+
+//         let camelCaseWords = '';
+
+//         for (let j = 0; j < words.length; j++) {
+//             const word = words[j];
+
+//             const camelCaseWord = word[0].toUpperCase() + word.slice(1);
+//             camelCaseWords += camelCaseWord;
+            
+//         }
+//         const camelCaseString = firstWord + camelCaseWords;
+
+//         ccString.push(camelCaseString);
+//     }
+//     return ccString;
+// }
+
+// console.log('Camel case string: ', toCamelCaseString(stringsArray));
+
+
+// Altra versione
 
 
 const stringsArray = ['23', 'pippo', 'pluto', 'la casa blu', 'osvaldo', '', 'porchetta'];
 
 
-function toCamelCaseString(stringsArray) {
-    const ccString = [];
-
-    for (let i = 0; i < stringsArray.length; i++) {
-        const string = stringsArray[i];
-
-        const words = string.split(' ');
-
-        const firstWord = words.shift().toLowerCase();
-
-        let camelCaseWords = '';
-
-        for (let j = 0; j < words.length; j++) {
-            const word = words[j];
-
-            const camelCaseWord = word[0].toUpperCase() + word.slice(1);
-            camelCaseWords += camelCaseWord;
-            
-        }
-        const camelCaseString = firstWord + camelCaseWords;
-
-        ccString.push(camelCaseString);
-    }
-    return ccString;
+function toFirstCase(selectedWord) {               // prende la prima lettera e lo mette maiuscola, poi prende il resto della stringa con split e lo mette a fianco
+    
+    const firstChar = selectedWord[0];
+    const firstCharUpper = firstChar.toUpperCase();
+    const restOfTheString = selectedWord.slice(1);
+    
+    return firstCharUpper + restOfTheString;
 }
 
-console.log('Camel case string: ', toCamelCaseString(stringsArray));
+function toCamelCase(selectedString) {
+    
+    const lowerString = selectedString.toLowerCase();      
+    const wordsArray = lowerString.split(' ');
 
+    if (wordsArray.length === 1) {
+        return lowerString;
+    }
 
+    let camelString = '';
+    for (let i = 0; i < wordsArray.length; i++) {
+        const element = wordsArray[i];
+        if (i === 0) {
+           camelString += element; 
+        } else {
+            camelString += toFirstCase(element);
+        }
+        
+    }
+    return camelString;
+}
 
+function toCamelCaseAll(stringsArray) {
+    const tempArray = [];
 
+    for (let i = 0; i < stringsArray.length; i++) {
+       
+        const element = stringsArray[i];
+        const newElement = toCamelCase(element);
 
+        tempArray.push(newElement);
+        
+    }
+
+    return tempArray;
+}
+
+console.log(toCamelCaseAll(stringsArray));
 
 
 // Svolgimento esercizio 7 filter function che prende in input un array di stringhe
@@ -438,7 +494,26 @@ console.log('Camel case string: ', toCamelCaseString(stringsArray));
 
 //   for (let i = 0; i < stringsArray.length; i++) {
 //     const pString = stringsArray[i];
-//     if (pString.includes('p')) {
+//     if (pString.includes('p') || pString.includes('P')) {
+//       filteredArray.push(pString);
+//     }
+//   }
+//   return filteredArray;
+// }
+// console.log("Filtered Array: ", filterStringsByLetterP(stringsArray));
+
+
+
+// Versione migliorata
+
+
+// function filterStringsByLetterP(stringsArray) {
+//   const filteredArray = [];
+
+//   for (let i = 0; i < stringsArray.length; i++) {
+//     const pString = stringsArray[i];
+    
+//     if (pString.toLowerCase().includes('p')) {
 //       filteredArray.push(pString);
 //     }
 //   }
@@ -463,7 +538,8 @@ console.log('Camel case string: ', toCamelCaseString(stringsArray));
   
 //     for (let i = 0; i < numbersArray.length; i++) {
 //       const number = numbersArray[i];
-//       if (number > 0 && number %3 === 0) {
+      
+//       if (number > 0 && number % 3 === 0) {
 //         filteredArray.push(number);
 //       }
 //     }
