@@ -114,7 +114,197 @@
 //     console.log('arguments', arguments);
 //     console.log('v1', v1);
 //     console.log('v2', v2);
+
 //     console.log('args', args);
 // }
 
 // pippo(2, 4, 6, 8, 0);       // in questo console log v1 prende 2,  v2 prende 4 mentre args prende il resto dei valori (6, 8 ,0)
+
+
+
+// REDUCE ----------------------------------------------------------------
+
+
+// logica per tutte le operazioni di reduce
+
+// function sumAllArray(arrayToSum) {
+    
+//     let accumulator =  0;                                   // di solito l'accumulatore viene inizializzato con un valore neutro rispetto a quello che vogliamo fare
+//     for (let i = 0; i < arrayToSum.length; i++) {    // ad esempio array vuoto, 0 per un operazione matematica etc
+//         const current = arrayToSum[i];
+
+//         accumulator = accumulator + current;
+        
+//     }                                
+//    return accumulator;
+// }
+
+// console.log('sumAllArray', sumAllArray([2, 3, 4, 5]));
+
+
+
+
+
+
+// function multiplyAllArray(arrayToMultiply) {
+    
+//     let accumulator =  1;                       // qui abbiamo messo 1 perchè è il valore neutro per la moltiplicazione
+//     for (let i = 0; i < arrayToMultiply.length; i++) {    
+//         const current = arrayToMultiply[i];
+
+//         accumulator *= current;             // *= è come scrivere accumulator * current
+        
+//     }                                
+//    return accumulator;
+// }
+
+// console.log('multiplyAllArray', multiplyAllArray([2, 3, 4, 5]));
+
+
+
+
+
+
+// function join(arrayToJoin) {
+    
+//     let accumulator =  '';                       // qui abbiamo messo stringa vuota perchè il neutro di una stringa
+//     for (let i = 0; i < arrayToJoin.length; i++) {    
+//         const current = arrayToJoin[i];
+
+//         accumulator += current;            
+        
+//     }                                
+//    return accumulator;
+// }
+
+// console.log('join', join(['qui', 'quo', 'qua']));
+
+
+
+
+
+// function sumEvenAndOdd(arrayToReduce) {
+    
+//     let accumulator =  {sumOfEven: 0, sumOfOdd: 0};    // qui abbiamo messo un oggetto con due chiavi per fare la somma dei pari da una parte e dispari dall'altra
+//     for (let i = 0; i < arrayToReduce.length; i++) {    
+//         const current = arrayToReduce[i];
+
+//        if (current % 2 === 0) {
+//         accumulator.sumOfEven += current;
+//        } else {
+//         accumulator.sumOfOdd += current;
+//        }        
+        
+//     }                                
+//    return accumulator;
+// }
+
+// console.log('sumEvenAndOdd', sumEvenAndOdd([1, 2, 3, 4, 5, 6]));
+
+
+
+
+// RICORSIONE ------------------------------------------------------------
+
+// ci permette di svolgere più volte un operazione senza usare i cicli
+// FATTORIALE (!)
+
+// 5! = 5 * 4 * 3 * 2 * 1  = 120!  // il fattoriale di un numero è la moltiplicazione di quel numero per tutti i numeri che vengono prima fino a 1
+
+
+// DEFINIZIONE 
+// 1) 1! = 1;
+// 2) n! = n * (n - 1)!
+
+
+// 5! = 5 * 4!  applichiamo la definizione 2
+//          4 * 3!
+             // 3 * 2!
+              // 2 * 1!
+                 //    1
+
+
+ 
+                
+// function fattoriale(n) {
+//     // 1) definizione fattoriale 1
+//     if (n === 1){     // dice che se il numero è 1 il suo fattoriale essendo 1 è uguale a 1
+//         return 1;    
+//     } else {
+//         // 2) definizione fattoriale 2
+//         return n * fattoriale(n - 1);
+//     }
+// }
+
+// console.log(fattoriale(5));
+
+
+
+// ESERCIZI -----------------------------------
+
+
+function min(v1, v2) {
+  let minimun;
+  if (v1 < v2) {
+    minimun = v1;
+  } else {
+    minimun = v2;
+  }
+  return minimun;
+}
+
+console.log('min test', min(3, 8) === 3);  // se minimun è uguale a 3 ritorna true
+console.log('min test', min(13, 8) === 8);   // se minimun è uguale a 8 ritorna true
+
+
+
+
+
+function min2(...args) {
+    
+    let accumulator = -Infinity;    // qui abbiamo assegnato il minimo assoluto con -Infinity
+  
+    for (let i = 0; i < args.length; i++) {
+        const current = args[i];
+
+        if (i === 0) {
+            accumulator = current;
+        } else if (accumulator > current) {
+            accumulator = current;
+        }
+        
+    }
+   return accumulator;
+}
+
+console.log('min2', min2());
+console.log('min2', min2(2));
+console.log('min2', min2(3, 2, -5, 8));
+
+
+
+
+
+
+// Esercizio con ricorsione
+
+
+
+// 1) isEven (0) => true
+// 2) isEven (1) => false
+// 3) isEven (n) => isEven (n-2);
+
+
+
+function isEven(n) {
+    if (n === 0) {
+        return true;
+    } else if (n === 1){
+        return false;
+    } else {
+        return isEven(n - 2);
+    }
+}
+
+console.log('isEven(3)', isEven(3));
+console.log('isEven(12)', isEven(6));
