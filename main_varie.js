@@ -106,7 +106,7 @@
 // console.log(sumAll(3, 4, 5));
 
 // i tre puntini dicono " tutto quello che trovi dentro alle parentesi quando viene invocata una funzione 
-// mettilo dentro l'array che si chiama args[i]"
+// mettilo dentro l'str che si chiama args[i]"
 
 
 
@@ -130,7 +130,7 @@
 // function sumAllArray(arrayToSum) {
     
 //     let accumulator =  0;                                   // di solito l'accumulatore viene inizializzato con un valore neutro rispetto a quello che vogliamo fare
-//     for (let i = 0; i < arrayToSum.length; i++) {    // ad esempio array vuoto, 0 per un operazione matematica etc
+//     for (let i = 0; i < arrayToSum.length; i++) {    // ad esempio str vuoto, 0 per un operazione matematica etc
 //         const current = arrayToSum[i];
 
 //         accumulator = accumulator + current;
@@ -243,43 +243,43 @@
 // ESERCIZI -----------------------------------
 
 
-function min(v1, v2) {
-  let minimun;
-  if (v1 < v2) {
-    minimun = v1;
-  } else {
-    minimun = v2;
-  }
-  return minimun;
-}
+// function min(v1, v2) {
+//   let minimun;
+//   if (v1 < v2) {
+//     minimun = v1;
+//   } else {
+//     minimun = v2;
+//   }
+//   return minimun;
+// }
 
-console.log('min test', min(3, 8) === 3);  // se minimun è uguale a 3 ritorna true
-console.log('min test', min(13, 8) === 8);   // se minimun è uguale a 8 ritorna true
-
-
+// console.log('min test', min(3, 8) === 3);  // se minimun è uguale a 3 ritorna true
+// console.log('min test', min(13, 8) === 8);   // se minimun è uguale a 8 ritorna true
 
 
 
-function min2(...args) {
+
+
+// function min2(...args) {
     
-    let accumulator = -Infinity;    // qui abbiamo assegnato il minimo assoluto con -Infinity
+//     let accumulator = -Infinity;    // qui abbiamo assegnato il minimo assoluto con -Infinity
   
-    for (let i = 0; i < args.length; i++) {
-        const current = args[i];
+//     for (let i = 0; i < args.length; i++) {
+//         const current = args[i];
 
-        if (i === 0) {
-            accumulator = current;
-        } else if (accumulator > current) {
-            accumulator = current;
-        }
+//         if (i === 0) {
+//             accumulator = current;
+//         } else if (accumulator > current) {
+//             accumulator = current;
+//         }
         
-    }
-   return accumulator;
-}
+//     }
+//    return accumulator;
+// }
 
-console.log('min2', min2());
-console.log('min2', min2(2));
-console.log('min2', min2(3, 2, -5, 8));
+// console.log('min2', min2());
+// console.log('min2', min2(2));
+// console.log('min2', min2(3, 2, -5, 8));
 
 
 
@@ -296,15 +296,37 @@ console.log('min2', min2(3, 2, -5, 8));
 
 
 
-function isEven(n) {
-    if (n === 0) {
-        return true;
-    } else if (n === 1){
+// function isEven(n) {
+//     if (n === 0) {
+//         return true;
+//     } else if (n === 1){
+//         return false;
+//     } else {
+//         return isEven(n - 2);
+//     }
+// }
+
+// console.log('isEven(3)', isEven(3));
+// console.log('isEven(6)', isEven(6));
+
+
+
+
+function isIsogram(str) {
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i];
+        
+    const wordArray = str.split(char);
+    const count = wordArray.length -1;
+
+    if (count > 1){
         return false;
-    } else {
-        return isEven(n - 2);
+    }  
     }
+    return true;
 }
 
-console.log('isEven(3)', isEven(3));
-console.log('isEven(12)', isEven(6));
+console.log(isIsogram('cane'));
+console.log(isIsogram('domodossola'));
+console.log(isIsogram('manuela'));
+
