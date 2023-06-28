@@ -237,19 +237,19 @@
 
 
 
-function  sumAll(array) {
+// function  sumAll(array) {
     
-    let accumulator = 0;    // 0 perchè elemento neutro della somma è 0
+//     let accumulator = 0;    // 0 perchè elemento neutro della somma è 0
 
-    for (let i = 0; i < array.length; i++) {
-        const current = array[i];
+//     for (let i = 0; i < array.length; i++) {
+//         const current = array[i];
         
-        accumulator = accumulator + current;
-    }
-   return accumulator;
-}
+//         accumulator = accumulator + current;
+//     }
+//    return accumulator;
+// }
 
-console.log(sumAll([23, 4, 4, 6, 3]));
+// console.log(sumAll([23, 4, 4, 6, 3]));
 
 
 
@@ -257,81 +257,195 @@ console.log(sumAll([23, 4, 4, 6, 3]));
 
 
 
-function reduce(array, reduceFunc, startingValue) {
-    let accumulator = startingValue;    
+// function reduce(array, reduceFunc, startingValue) {
+//     let accumulator = startingValue;    
 
-    for (let i = 0; i < array.length; i++) {
-        const current = array[i];
+//     for (let i = 0; i < array.length; i++) {
+//         const current = array[i];
         
-        accumulator = reduceFunc(accumulator, current);
-    }
-   return accumulator;
-}
+//         accumulator = reduceFunc(accumulator, current);
+//     }
+//    return accumulator;
+// }
 
 
-function sum(accumulator, current){
-    console.log('accumulator', accumulator);
-    console.log('current', current)
-    const newAccumulator = accumulator + current;    // qui fa quello che faceva nella funzione sopra accumulator = accumulator + current;
-    return newAccumulator;
-}
+// function sum(accumulator, current){
+//     console.log('accumulator', accumulator);
+//     console.log('current', current)
+//     const newAccumulator = accumulator + current;    // qui fa quello che faceva nella funzione sopra accumulator = accumulator + current;
+//     return newAccumulator;
+// }
  
 
-console.log(reduce([23, 4, 4, 6, 3], sum, 0));  // qui abbiamo passato la funzione sum e lo startingValue che è 0
+// console.log(reduce([23, 4, 4, 6, 3], sum, 0));  // qui abbiamo passato la funzione sum e lo startingValue che è 0
 
 
 
 
 
-const testArray4 = [4, 3, 2, 1];
+// const testArray4 = [4, 3, 2, 1];
 
 
 // funzione per moltiplicare tutti i numeri dell'array tra loro
 
 
 
-function multiply(acc, curr){      // acc = accumulator e curr = current
-   const newAcc = acc * curr;
-   return newAcc;
-}
+// function multiply(acc, curr){      // acc = accumulator e curr = current
+//    const newAcc = acc * curr;
+//    return newAcc;
+// }
 
 
-console.log(testArray4.reduce(multiply, 1));    // .reduce funzione già presente in js
-console.log(testArray4.reduce((acc, curr) => acc * curr, 1));  // funzione come quella sopra con le lambda
+// console.log(testArray4.reduce(multiply, 1));    // .reduce funzione già presente in js
+// console.log(testArray4.reduce((acc, curr) => acc * curr, 1));  // funzione come quella sopra con le lambda
 
 
 
 // funzione per sommare tra loro solo le cifre a indice dispari del testArray4
 
 
-function sumOnlyOddIndex(acc, curr, index, originalArray) {
-    if (index % 2 !== 0){     // se index è dipari
-    const newAcc = acc + curr;
-    return newAcc;
-    } else {
-        return acc;
-    } 
-}
+// function sumOnlyOddIndex(acc, curr, index, originalArray) {
+//     if (index % 2 !== 0){     // se index è dipari
+//     const newAcc = acc + curr;
+//     return newAcc;
+//     } else {
+//         return acc;
+//     } 
+// }
 
-console.log(testArray4.reduce(sumOnlyOddIndex, 0));
-
-
+// console.log(testArray4.reduce(sumOnlyOddIndex, 0));
 
 
-function  sumAll2(array) {  // si potrebbe trovare una funzione di questo tipo senza starting value e la funzione inizia a contare dall'indice 1 dell'array
+
+
+// function  sumAll2(array) {  // si potrebbe trovare una funzione di questo tipo senza starting value e la funzione inizia a contare dall'indice 1 dell'array
     
-    let accumulator = array[0];    
+//     let accumulator = array[0];    
 
-    for (let i = 1; i < array.length; i++) {
-        const current = array[i];
+//     for (let i = 1; i < array.length; i++) {
+//         const current = array[i];
         
-        accumulator = accumulator + current;
-    }
-   return accumulator;
+//         accumulator = accumulator + current;
+//     }
+//    return accumulator;
+// }
+
+// console.log(sumAll2([2, 3, 4]));    // facendo questo la funzione inizia a contare da 3 a cui somma 2 e poi somma 4
+// console.log(sumAll([2, 3, 4]));     
+
+// console.log(testArray4.reduce(sum));
+// console.log(testArray4.reduce(sum, 0));
+
+
+
+
+// FUNZIONI CHE RESTITUISCONO FUNZIONI (da sapere ma utilizzo raro) ---------------------------
+
+
+function multiplyBy2(number) {
+    const result = number * 2;
+
+    return result;
 }
 
-console.log(sumAll2([2, 3, 4]));    // facendo questo la funzione inizia a contare da 3 a cui somma 2 e poi somma 4
-console.log(sumAll([2, 3, 4]));     
+function multiplyBy4(number) {
+    const result = number * 4;
 
-console.log(testArray4.reduce(sum));
-console.log(testArray4.reduce(sum, 0));
+    return result;
+}
+
+
+
+console.log(multiplyBy2(3));
+console.log(multiplyBy4(3));
+
+
+
+
+function multiplyGenerator(multiplicator) { // questa funzione prende un moltiplicatore e fa una funzione che prende un numero e lo moltiplica per il moltiplicatore e ritorna il result
+    
+    const multiplyFunction = function (number){
+        const result = number * multiplicator;
+        return result;
+    }
+
+    return multiplyFunction;
+}
+
+
+const multiplyBy5 = multiplyGenerator(5);  // multiply generator genera una nuova funzione che poi potrò usare, come ad esempio sotto che abbiamo generato multiplyBy5
+console.log(multiplyBy5(3));
+
+const multiplyBy10 = multiplyGenerator(10); // in questo caso abbiamo creato un multiply generator che moltiplica per 10
+console.log(multiplyBy10(3));
+
+console.log(multiplyGenerator (100)(3)); // qui invece abbiamo invocato la funzione passando subito il parametro
+
+
+
+
+
+function prefix(prefixStr) {  // funzione come quelle sopra ma usando le lambda che genera delle funzioni che generano il prefisso di un num di telefono
+    return (str) => prefixStr + ' ' + str;
+}
+
+const itaPrefix = prefix ('+39');
+console.log(itaPrefix('3339917218'));
+
+
+
+
+// stessa funzione di quella sopra con le lambda ma in versione con più passaggi
+
+function prefix(prefixStr) {
+    const prefixFunction = (str) => prefixStr + ' ' + str;
+    return prefixFunction;
+}
+
+
+const frPrefix = prefix('+33');
+console.log(frPrefix('3339917218'));
+
+
+
+// ESERCIZI ---------------------------------------------------------
+
+
+// const numbersArray = [23, 45, 12, -8, -6, 23, 45, 1, 45, 34, 2];
+// const stringsArray = ['23', 'pippo', 'pluto', 'la casa blu', 'osvaldo', '', 'porchetta'];
+
+// 1) mapping function che prende in input un array di numeri
+//    e restituisce un array con tutti i numeri diminuiti di uno
+
+// 2) mapping function che prende in input un array di numeri
+//    e restituisce un array con i il valore assoluto dei numeri
+
+// 3) mapping function che prende in input un array di numeri
+//    e restituisce un array di strighe con scritto 'PARI' se il numero
+//    corrispondente è pari o 'DISPARI' se il numero corrispondente è dispari
+
+// 4) mapping function che prende in input un array di stringhe
+//    e le restituisce tutte minuscole
+
+// 5) mapping function che prende in input un array di strighe
+//    e restituisce un array di numeri con le lunghezze delle stringhe
+
+
+// 6) filter function che prende in input un array di stringhe
+//    e restituisce solo quelle più lunghe di tre caratteri
+
+// 7) filter function che prende in input un array di strighe
+//    e restituisce solo quelle che contengono la lettera 'p'
+
+// 8) filter function che prende in input un array di numeri
+//    e restituisce i positivi divisibili per 3
+
+
+
+
+
+
+
+
+
+
