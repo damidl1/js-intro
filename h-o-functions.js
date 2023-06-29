@@ -560,7 +560,7 @@ function keepPositiveAndDivisibleBy3(element){
             return false
         }
     }
-    console.log(numbersArray.filter(keepPositiveAndDivisibleBy3));
+    console.log(numbersArray.filter(keepPositiveAndDivisibleBy3)); 
     
 
 
