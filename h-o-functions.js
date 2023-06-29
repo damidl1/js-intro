@@ -342,69 +342,69 @@
 // FUNZIONI CHE RESTITUISCONO FUNZIONI (da sapere ma utilizzo raro) ---------------------------
 
 
-function multiplyBy2(number) {
-    const result = number * 2;
+// function multiplyBy2(number) {
+//     const result = number * 2;
 
-    return result;
-}
+//     return result;
+// }
 
-function multiplyBy4(number) {
-    const result = number * 4;
+// function multiplyBy4(number) {
+//     const result = number * 4;
 
-    return result;
-}
-
-
-
-console.log(multiplyBy2(3));
-console.log(multiplyBy4(3));
+//     return result;
+// }
 
 
 
+// console.log(multiplyBy2(3));
+// console.log(multiplyBy4(3));
 
-function multiplyGenerator(multiplicator) { // questa funzione prende un moltiplicatore e fa una funzione che prende un numero e lo moltiplica per il moltiplicatore e ritorna il result
+
+
+
+// function multiplyGenerator(multiplicator) { // questa funzione prende un moltiplicatore e fa una funzione che prende un numero e lo moltiplica per il moltiplicatore e ritorna il result
     
-    const multiplyFunction = function (number){
-        const result = number * multiplicator;
-        return result;
-    }
+//     const multiplyFunction = function (number){
+//         const result = number * multiplicator;
+//         return result;
+//     }
 
-    return multiplyFunction;
-}
-
-
-const multiplyBy5 = multiplyGenerator(5);  // multiply generator genera una nuova funzione che poi potrò usare, come ad esempio sotto che abbiamo generato multiplyBy5
-console.log(multiplyBy5(3));
-
-const multiplyBy10 = multiplyGenerator(10); // in questo caso abbiamo creato un multiply generator che moltiplica per 10
-console.log(multiplyBy10(3));
-
-console.log(multiplyGenerator (100)(3)); // qui invece abbiamo invocato la funzione passando subito il parametro
+//     return multiplyFunction;
+// }
 
 
+// const multiplyBy5 = multiplyGenerator(5);  // multiply generator genera una nuova funzione che poi potrò usare, come ad esempio sotto che abbiamo generato multiplyBy5
+// console.log(multiplyBy5(3));
+
+// const multiplyBy10 = multiplyGenerator(10); // in questo caso abbiamo creato un multiply generator che moltiplica per 10
+// console.log(multiplyBy10(3));
+
+// console.log(multiplyGenerator (100)(3)); // qui invece abbiamo invocato la funzione passando subito il parametro
 
 
 
-function prefix(prefixStr) {  // funzione come quelle sopra ma usando le lambda che genera delle funzioni che generano il prefisso di un num di telefono
-    return (str) => prefixStr + ' ' + str;
-}
 
-const itaPrefix = prefix ('+39');
-console.log(itaPrefix('3339917218'));
+
+// function prefix(prefixStr) {  // funzione come quelle sopra ma usando le lambda che genera delle funzioni che generano il prefisso di un num di telefono
+//     return (str) => prefixStr + ' ' + str;
+// }
+
+// const itaPrefix = prefix ('+39');
+// console.log(itaPrefix('3339917218'));
 
 
 
 
 // stessa funzione di quella sopra con le lambda ma in versione con più passaggi
 
-function prefix(prefixStr) {
-    const prefixFunction = (str) => prefixStr + ' ' + str;
-    return prefixFunction;
-}
+// function prefix(prefixStr) {
+//     const prefixFunction = (str) => prefixStr + ' ' + str;
+//     return prefixFunction;
+// }
 
 
-const frPrefix = prefix('+33');
-console.log(frPrefix('3339917218'));
+// const frPrefix = prefix('+33');
+// console.log(frPrefix('3339917218'));
 
 
 
@@ -412,158 +412,283 @@ console.log(frPrefix('3339917218'));
 
 // ESERCIZI-------------------------------------------------
 
-const numbersArray = [23, 45, 12, -8, -6, 23, 45, 1, 45, 34, 2];
-const stringsArray = ['23', 'PIPPO', 'pluto', 'la CASA blu', 'Osvaldo', '', 'porchetta'];
+// const numbersArray = [23, 45, 12, -8, -6, 23, 45, 1, 45, 34, 2];
+// const stringsArray = ['23', 'PIPPO', 'pluto', 'la CASA blu', 'Osvaldo', '', 'porchetta'];
 
 // 1) mapping function che prende in input un array di numeri
 //    e restituisce un array con tutti i numeri diminuiti di uno
 
 
-function minusOne(element) {
-    const newElement = element - 1;
-    return newElement;
-}
+// function minusOne(element) {
+//     const newElement = element - 1;
+//     return newElement;
+// }
 
-console.log(numbersArray.map(minusOne));
+// console.log(numbersArray.map(minusOne));
 
-console.log(numbersArray.map(element => element - 1));
+// console.log(numbersArray.map(element => element - 1));
+
+// versione più corta esercizio 1 
+
+
+
+// function minusOne(element) {
+//    return element -1;
+// }
+
+// console.log(numbersArray.map(minusOne));
+
+// console.log(numbersArray.map(element => element - 1));
+
+
+
+
 
 // 2) mapping function che prende in input un array di numeri
 // e restituisce un array con i il valore assoluto dei numeri
 
-function absValue(element) {
-    const newElement = Math.abs(element);
-    return newElement;
-}
+// function absValue(element) {
+//     const newElement = Math.abs(element);
+//     return newElement;
+// }
 
-console.log(numbersArray.map(absValue));
+// console.log(numbersArray.map(absValue));
 
-console.log(numbersArray.map(element => Math.abs(element)));
-
+// console.log(numbersArray.map(element => Math.abs(element)));
 
 // console.log(absoluteAll(numbersArray));
+
+// versione più corta esercizio 2
+
+
+
+// function abs(element) {
+//     return Math.abs(element);
+//  }
+ 
+//  console.log(numbersArray.map(abs));
+ 
+//  console.log(numbersArray.map(element => Math.abs(element)));
+ 
+
+
+
+
+
+
 
 // 3) mapping function che prende in input un array di numeri
 //    e restituisce un array di strighe con scritto 'PARI' se il numero
 //    corrispondente è pari o 'DISPARI' se il numero corrispondente è dispari
 
-// function arrayToEvenOrOddStrings(arrayOfNumbers){
 
-//     const tempArray = [];
 
-//     for (let i = 0; i < arrayOfNumbers.length; i++) {
-
-//         const element = arrayOfNumbers[i];
-        
-//         //inserire il codice quì
-//         let newElement;
-         if (element % 2 === 0) {
-             newElement = 'PARI'
-        } else {
-             newElement = 'DISPARI'
-         }
-
-//         tempArray.push(newElement);
-        
-//     }
-
-//     return tempArray;
-
+// function evenOrOdd(element) {
+//     const newElement = element;
+//     return newElement;
 // }
 
-// console.log(arrayToEvenOrOddStrings(numbersArray));
+// versione più corta esercizio 3
+
+// function toPariOrDispari(element) {
+//     if (element % 2 === 0) {
+//         return 'pari';
+//      }
+//         return 'dispari';
+   
+// }
+
+// console.log(numbersArray.map(toPariOrDispari));
+
+// console.log(numbersArray.map(element => element % 2 === 0 ? 'pari' : 'dispari'));
 
 
-function evenOrOdd(element) {
-    const newElement = element;
-    return newElement;
-}
 
-console.log(numbersArray.map(absValue));
 
-console.log(numbersArray.map(element => Math.abs(element)));
 
 
 // 4) mapping function che prende in input un array di stringhe
 //    e le restituisce tutte minuscole
 
-function toLowerCaseAll(element) {
-        const newElement = element.toLowerCase();
-        return newElement;
-    }    
-    console.log(stringsArray.map(toLowerCaseAll));
+// function toLowerCaseAll(element) {
+//         const newElement = element.toLowerCase();
+//         return newElement;
+//     }    
+//     console.log(stringsArray.map(toLowerCaseAll));
     
-    console.log(stringsArray.map(element => element.toLowerCase()));
+//     console.log(stringsArray.map(element => element.toLowerCase()));
+
+
+
+// versione più corta esercizio 4
+
+
+// function toLower(element) {
+//     return element.toLowerCase();
+// }
+
+
+
+// console.log(stringsArray.map(toLower));
+
+// console.log(stringsArray.map(element => element.toLowerCase()));
+
+
+
+
+
+
+
 
 // 5) mapping function che prende in input un array di strighe
 //    e restituisce un array di numeri con le lunghezze delle stringhe
 
-function fromStringArrayToLenghtArray(arrayOfStrings){
 
-    const tempArray = [];
 
-    for (let i = 0; i < arrayOfStrings.length; i++) {
+// function countLength(element) {
+//     return element.length;
+// }
 
-        const element = arrayOfStrings[i];
-        
-        //inserire il codice quì
-        let newElement;
-        if (element === undefined) {
-            newElement = -1;
-            console.log('ALLARME!!')
-        } else {
-            newElement = element.length;
-        }
-        
-        tempArray.push(newElement);
-    }
 
-    return tempArray;
 
-}
+// console.log(stringsArray.map(countLength));
 
-console.log(fromStringArrayToLenghtArray(stringsArray));
+// console.log(stringsArray.map(element => element.length));
 
-// 7) filter function che prende in input un array di stringhe
+
+
+
+
+
+
+
+
+// 6) filter function che prende in input un array di stringhe
 //    e restituisce solo quelle più lunghe di tre caratteri
 
-function removeShorterThan3Chars(string) {
-    if (string.length > 3) {
-        return true
-    } else {
-        return false
-    }
-}
-console.log(stringsArray.filter(removeShorterThan3Chars));
+// function removeShorterThan3Chars(string) {
+//     if (string.length > 3) {
+//         return true
+//     } else {
+//         return false
+//     }
+// }
+// console.log(stringsArray.filter(removeShorterThan3Chars));
 
-console.log(stringsArray.filter(string => string.length > 3));
+// console.log(stringsArray.filter(string => string.length > 3));
 
-// 8) filter function che prende in input un array di strighe
+
+
+
+
+// versione più corta
+
+
+// function containsLetterP(element) {
+//     if (element.length > 3){
+//         return true;
+//     }
+//     return false;
+// }
+
+
+
+// console.log(stringsArray.filter(containsLetterP));
+
+// console.log(stringsArray.filter(element => element.length > 3));
+
+
+
+
+// 7) filter function che prende in input un array di strighe
 //    e restituisce solo quelle che contengono la lettera 'p'
 
-function removePEnemies(string){
-if (string.toLowerCase().includes('p')) {
-    return true
-    } else {
-        return false
-    }
-}
-console.log(stringsArray.filter(removePEnemies));
+// function removePEnemies(string){
+// if (string.toLowerCase().includes('p')) {
+//     return true
+//     } else {
+//         return false
+//     }
+// }
+// console.log(stringsArray.filter(removePEnemies));
 
-// 9) filter function che prende in input un array di numeri
+
+
+
+
+// versione più corta
+
+
+// function containsLetterP(element) {
+//     if (element.toLowerCase().includes('p')){
+//         return true;
+//     }
+//     return false;
+// }
+
+
+
+// console.log(stringsArray.filter(containsLetterP));
+
+// console.log(stringsArray.filter(element => element.toLowerCase().includes('p')));
+
+
+
+
+
+
+// 8) filter function che prende in input un array di numeri
 //    e restituisce i positivi divisibili per 3
 
-function keepPositiveAndDivisibleBy3(element){
-    if (element % 3 === 0) {
-        return true
-        } else {
-            return false
-        }
-    }
-    console.log(numbersArray.filter(keepPositiveAndDivisibleBy3)); 
+// function keepPositiveAndDivisibleBy3(element){
+//     if (element % 3 === 0) {
+//         return true
+//         } else {
+//             return false
+//         }
+//     }
+//     console.log(numbersArray.filter(keepPositiveAndDivisibleBy3)); 
     
 
 
+// versione più corta
+
+
+
+
+// function isPositiveAndDivisibleBy3(element) {
+//  if (element >= 0 && element % 3 === 0) {
+//     return true;
+//  }
+//  return false;
+// }
+
+
+
+// console.log(numbersArray.filter(isPositiveAndDivisibleBy3));
+
+// console.log(numbersArray.filter(element => element >= 0 && element % 3 === 0));
+
+// QUALSIASI FUNZIONE DI FILTER DEVE SEMPRE RITORNARE UN TRUE O FALSE
+
+
+
+
+//10) reduce function che dato un array di stringhe somma tutte le lunghezze 
+
+
+
+// function sumLength(acc, curr) {
+//    return acc += curr.length;
+//  }
+    
+   
+   
+   
+   
+//    console.log(stringsArray.reduce(sumLength, 0));
+   
+//    console.log(stringsArray.reduce((a, c) => a + c.length, 0));
 
 
 
@@ -571,3 +696,139 @@ function keepPositiveAndDivisibleBy3(element){
 
 
 
+   //11) reduce function che dato un array di stringhe somma le lunghezze delle ultime 3
+
+
+
+
+//    function sumLengthIfLast3(acc, curr, index, originalArray) {
+//      if (index >= originalArray.length - 3) {
+//         return acc + curr.length;
+//      }
+//      return acc;   
+//   }
+     
+    
+    
+    
+    
+//     console.log(stringsArray.reduce(sumLengthIfLast3, 0));
+    
+//     console.log(stringsArray.reduce((a, c, i, o) => i >= o.length - 3 ? a + c.length : a, 0));
+
+
+
+
+
+
+
+
+
+// SORTING (METTERE IN ORDINE GLI ARRAY)-------------------------------------------------
+
+
+
+let numbersArray = [23, 45, 12, -8, -6, 23, 45, 1, 45, 34, 2];
+const stringsArray = ['23', 'PIPPO', 'pluto', 'la CASA blu', 'Osvaldo', '', 'porchetta'];
+
+
+// stringsArray.sort();
+
+// console.log(stringsArray);
+
+
+
+// numbersArray.sort();
+
+// console.log(numbersArray);
+
+
+
+// sort è una funzione di alto ordine che può prendere un'altra funzione (comparing function)
+
+// const newArray = numbersArray.sort();       // con sort perdiamo l'ordine precedente
+
+// console.log('new', newArray);
+// console.log('numbers', numbersArray);
+
+
+
+// comparing function per ordinare i numeri in ordine ascendente
+
+function compareAscendingNumbers(n1, n2) {         
+    if (n1 < n2){
+        return -1;
+    } else if (n1 > n2){
+        return +1;
+    } else {
+        return 0;
+    }
+}
+
+numbersArray.sort(compareAscendingNumbers);
+
+console.log(numbersArray);
+
+
+// quando vogliamo che i due elementi mantengano lo stesso ordine si mette nel return -1 (un numero negativo)
+// quando vogliamo che i due elementi cambino di posizione  si mette nel return +1 (un numero positivo)
+// quando è indifferente si mette nel return 0
+
+
+
+
+
+// comparing function per ordinare i numeri in ordine discendente
+
+
+function compareDescendingNumbers(n1, n2) {         
+    if (n1 < n2){
+        return +1;
+    } else if (n1 > n2){
+        return -1;
+    } else {
+        return 0;
+    }
+}
+
+numbersArray.sort(compareDescendingNumbers);
+
+
+
+
+
+
+// comparazione tra numeri usando una proprietà matematica presente in javascript
+
+
+
+function compareAscendingNumbers2(n1, n2) {
+    return n1 - n2;        // se n1 è più grande di n2 la sottrazione darà un numero positivo
+}
+
+
+
+
+
+function compareDescendingNumbers2(n1, n2) {         
+    return n2 - n1;         // se n2 è più piccolo di n2 la sottrazione darà un numero negativo
+}
+
+
+console.log(numbersArray);
+
+
+numbersArray.sort(compareAscendingNumbers2);
+
+numbersArray.sort(compareDescendingNumbers2);
+
+numbersArray.sort((n1, n2) => n1 - n2);     // sintassi con lambda
+
+
+
+
+stringsArray.sort((s1, s2) => s1.localeCompare(s2));  // locale compare è il metodo di comparazione delle stringhe, è locale perchè fa comparazione localizzata (dipende da che alfabeto e nazione siamo)
+
+stringsArray.sort((s1, s2) => - s1.localeCompare(s2));  // per fare l'inverso del codice sopra bisogna mettere - prima di s1.localeCompare
+
+console.log(stringsArray);
