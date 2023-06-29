@@ -728,8 +728,8 @@
 
 
 
-let numbersArray = [23, 45, 12, -8, -6, 23, 45, 1, 45, 34, 2];
-const stringsArray = ['23', 'PIPPO', 'pluto', 'la CASA blu', 'Osvaldo', '', 'porchetta'];
+// let numbersArray = [23, 45, 12, -8, -6, 23, 45, 1, 45, 34, 2];
+// const stringsArray = ['23', 'PIPPO', 'pluto', 'la CASA blu', 'Osvaldo', '', 'porchetta'];
 
 
 // stringsArray.sort();
@@ -755,19 +755,19 @@ const stringsArray = ['23', 'PIPPO', 'pluto', 'la CASA blu', 'Osvaldo', '', 'por
 
 // comparing function per ordinare i numeri in ordine ascendente
 
-function compareAscendingNumbers(n1, n2) {         
-    if (n1 < n2){
-        return -1;
-    } else if (n1 > n2){
-        return +1;
-    } else {
-        return 0;
-    }
-}
+// function compareAscendingNumbers(n1, n2) {         
+//     if (n1 < n2){
+//         return -1;
+//     } else if (n1 > n2){
+//         return +1;
+//     } else {
+//         return 0;
+//     }
+// }
 
-numbersArray.sort(compareAscendingNumbers);
+// numbersArray.sort(compareAscendingNumbers);
 
-console.log(numbersArray);
+// console.log(numbersArray);
 
 
 // quando vogliamo che i due elementi mantengano lo stesso ordine si mette nel return -1 (un numero negativo)
@@ -781,17 +781,17 @@ console.log(numbersArray);
 // comparing function per ordinare i numeri in ordine discendente
 
 
-function compareDescendingNumbers(n1, n2) {         
-    if (n1 < n2){
-        return +1;
-    } else if (n1 > n2){
-        return -1;
-    } else {
-        return 0;
-    }
-}
+// function compareDescendingNumbers(n1, n2) {         
+//     if (n1 < n2){
+//         return +1;
+//     } else if (n1 > n2){
+//         return -1;
+//     } else {
+//         return 0;
+//     }
+// }
 
-numbersArray.sort(compareDescendingNumbers);
+// numbersArray.sort(compareDescendingNumbers);
 
 
 
@@ -802,33 +802,249 @@ numbersArray.sort(compareDescendingNumbers);
 
 
 
-function compareAscendingNumbers2(n1, n2) {
-    return n1 - n2;        // se n1 è più grande di n2 la sottrazione darà un numero positivo
-}
+// function compareAscendingNumbers2(n1, n2) {
+//     return n1 - n2;        // se n1 è più grande di n2 la sottrazione darà un numero positivo
+// }
 
 
 
 
 
-function compareDescendingNumbers2(n1, n2) {         
-    return n2 - n1;         // se n2 è più piccolo di n2 la sottrazione darà un numero negativo
-}
+// function compareDescendingNumbers2(n1, n2) {         
+//     return n2 - n1;         // se n2 è più piccolo di n2 la sottrazione darà un numero negativo
+// }
 
 
-console.log(numbersArray);
+// console.log(numbersArray);
 
 
-numbersArray.sort(compareAscendingNumbers2);
+// numbersArray.sort(compareAscendingNumbers2);
 
-numbersArray.sort(compareDescendingNumbers2);
+// numbersArray.sort(compareDescendingNumbers2);
 
-numbersArray.sort((n1, n2) => n1 - n2);     // sintassi con lambda
-
-
+// numbersArray.sort((n1, n2) => n1 - n2);     // sintassi con lambda
 
 
-stringsArray.sort((s1, s2) => s1.localeCompare(s2));  // locale compare è il metodo di comparazione delle stringhe, è locale perchè fa comparazione localizzata (dipende da che alfabeto e nazione siamo)
 
-stringsArray.sort((s1, s2) => - s1.localeCompare(s2));  // per fare l'inverso del codice sopra bisogna mettere - prima di s1.localeCompare
 
-console.log(stringsArray);
+// stringsArray.sort((s1, s2) => s1.localeCompare(s2));  // locale compare è il metodo di comparazione delle stringhe, è locale perchè fa comparazione localizzata (dipende da che alfabeto e nazione siamo)
+
+// stringsArray.sort((s1, s2) => - s1.localeCompare(s2));  // per fare l'inverso del codice sopra bisogna mettere - prima di s1.localeCompare
+
+// console.log(stringsArray);
+
+
+
+
+
+
+
+// const student1 = {
+//     name: 'Manuela',
+//     yob: 1988,
+//     marks: [10, 8, 7, 5]
+// }
+
+
+
+// const student2 = {
+//     name: 'Damiano',
+//     yob: 1993,
+//     marks: [9, 8, 7, 10]
+// }
+
+
+
+// const student3 = {
+//     name: 'Cesare',
+//     yob: 2003,
+//     marks: [7, 8, 7, 6]
+// }
+
+
+
+// const student4 = {
+//     name: 'Isabella',
+//     yob: 1996,
+//     marks: [10, 8, 9, 9]
+// }
+
+
+
+
+// const student5 = {
+//     name: 'Stefania',
+//     yob: 1996,
+//     marks: [9, 4, 7, 6]
+// }
+
+
+
+// const student6 = {
+//     name: 'Ares',
+//     yob: 1993,
+//     marks: [10, 10, 10, 10]
+// }
+
+
+// const student7 = {
+//     name: 'Stefania',
+//     yob: 2000,
+//     marks: [10, 10, 9, 10]
+// }
+
+
+
+// const student8 = {
+//     name: 'Cesare',
+//     yob: 2003,
+//     marks: [9, 9, 9, 9]
+// }
+
+
+
+
+
+
+// const students = [student1, student2, student3, student4, student5, student6, student7, student8];
+
+
+
+
+
+// function compareStudentsByNameAscending(s1, s2) {      // compariamo sempre due studenti s1 s2
+//     return s1.name.localeCompare(s2.name);     //andiamo a prendere il campo che vogliamo ordinare e uso la comparazione adatta a quel campo
+// }
+
+
+
+// function compareStudentsByYOBDescending(s1, s2) {      // funzione per comparare anno di nascita, questa va dal più grande 2003 al più piccolo 1988
+//     return s2.yob - s1.yob;     
+// }
+
+
+
+
+// students.sort(compareStudentsByYOBDescending);
+
+
+
+
+
+
+// function compareStudentsByNameAndYear(s1, s2) {      
+//    if (s1.name.localeCompare(s2.name) === 0) { // questo vuol dire "se entrambi i nomi sono uguali" perchè 0 nella compare è il valore per le cose uguali
+//      return s2.yob - s1.yob;
+//    } else {
+//     return s1.name.localeCompare(s2.name);     // quindi se ci sono due nomi uguali viene eseguita questa istruzione
+//    }   
+// }
+
+
+// students.sort(compareStudentsByNameAndYear);
+
+// console.log(students);
+
+
+
+
+// function calculateMean(arrayOfNumber) {    // qui usiamo una reduce per fare la media dei voti
+//     const sumOfArray = arrayOfNumber.reduce((a, c) => a + c);
+//     const mean = sumOfArray / arrayOfNumber.length;
+//     return mean;
+// }
+
+
+// function compareByStudentsMarksMeanAscending(s1, s2) {     // voti dal più basso al più alto
+//    return calculateMean(s1.marks) - calculateMean(s2.marks);    
+// }
+
+// function compareByStudentsMarksMeanDescending(s1, s2) {       // voti dal più alto al più basso
+//        return calculateMean(s2.marks) - calculateMean(s1.marks);    
+//     }
+
+
+
+
+//     function compareStudentsByNameYearAndMean(s1, s2) {     // se vogliamo mettere il cesare con i voti più alti dopo quello coi voti più bassi
+//     if (s1.name.localeCompare(s2.name) === 0) {
+//       if (s2.yob - s1.yob === 0) {
+//         return calculateMean(s2.marks) - calculateMean(s1.marks);
+//       } else {
+//         return s2.yob - s1.yob;
+//       } 
+//     } else {
+//         return s1.name.localeCompare(s2.name);
+//     }
+// }
+
+
+
+
+// students.sort(compareStudentsByNameYearAndMean);     
+
+// console.log(students);
+
+
+
+
+
+// FUNZIONE FIND (serve per trovare il primo elemento che soddisfa una condizione) --------------------------------------------------
+
+
+// const stringsArray = ['23', 'PIPPO', 'pluto', 'la CASA blu', 'Osvaldo', '', 'porchetta'];
+
+
+// function isGreaterThan3Chars(element) {
+//    if (element.length > 3) {
+//     return true;
+//    } 
+//    return false; 
+// }
+
+
+// console.log(stringsArray.filter(isGreaterThan3Chars));
+
+// console.log(stringsArray.find(isGreaterThan3Chars));   // .find guarda uno ad uno gli elementi dell'array e il primo elemento che soddisfa la condizione e lo prende ignorando gli altri
+
+
+
+
+// function containsCASA(element) {
+//     if (element.includes('CASA')) {
+//         return true;
+//     }
+//     return false;
+// }
+
+
+// console.log(stringsArray.filter(containsCASA));
+//                                                          // filter ci da l'elemento dentro ad un array che contiene un solo elemento, il find ci da l'elemento e viene tolto dall'array
+// console.log(stringsArray.find(containsCASA));
+
+
+
+
+
+// FUNZIONE SOME --------------------------------------------------
+// si chiede se un array ha una determinata caratteristica e non ritorna l'elemento ma ritorna true se quell'elemento ha quella caratteristica o false se non ce l'ha
+
+
+
+// function isGreaterThan30Chars(element) {
+//     if (element.length > 30) {
+//         return true;
+//     }
+//     return false;
+// }
+
+
+// console.log(stringsArray.some(isGreaterThan3Chars));
+
+// console.log(stringsArray.some(isGreaterThan30Chars));
+
+// il some quindi serve per accertarsi se dentro l'array c'è almeno un elemento con quella caratteristica
+// infatti in isGreaterThan3Chars uscirà true mentre in isGreaterThan30Chars uscirà false
+
+
+
