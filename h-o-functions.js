@@ -1019,7 +1019,7 @@
 
 
 // console.log(stringsArray.filter(containsCASA));
-//                                                          // filter ci da l'elemento dentro ad un array che contiene un solo elemento, il find ci da l'elemento e viene tolto dall'array
+                                                         // filter ci da l'elemento dentro ad un array che contiene un solo elemento, il find ci da l'elemento e viene tolto dall'array
 // console.log(stringsArray.find(containsCASA));
 
 

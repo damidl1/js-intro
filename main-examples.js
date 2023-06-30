@@ -254,7 +254,7 @@ function convertToNumbersAndSummAll2(str) {
   // 3) Data una stringa, eliminare tutte le parole più corte di 4 caratteri
   //    e restituirle in un array ordinate per lunghezza dalla più lunga
 
-    const test3 = 'ho fatto il bucato ieri sera ma si è tinto tutto di rosso';
+    const test3 = 'ho fatto il bucato ieri sera ma si è colorato tutto di violetto';
 
 
 
@@ -282,3 +282,95 @@ function convertToNumbersAndSummAll2(str) {
     
     
     console.log(removePAndSumLenght(test1));
+
+
+
+    // svolgimento esercizi finale 
+
+
+
+    
+
+
+//1) Dato un array di stringhe, eliminare tutte quelle che non contengono la lettera p
+//   e ritornare la somma delle lunghezze delle rimanenti
+
+function pRemoverAndSumLength(strArr) {
+    let pArray = strArr.filter(el => el.includes('p'))
+    lengthSumArr = pArray.reduce ((acc,curr)=> acc+curr.length ,0 )
+    return lengthSumArr
+}
+
+console.log(pRemoverAndSumLength(test1));
+
+
+    function pRemoverAndSumLength2(strArr){
+        return strArr.filter(el => el.includes('p'))
+                        .reduce ((acc,curr)=> acc+curr.length ,0 )
+    }
+
+console.log(pRemoverAndSumLength2(test1));
+
+function pRemoverAndSumLength3(strArr) {
+    let acc = 0
+    for (const curr of strArr) {
+        if (curr.includes('p')) {
+            acc = acc + curr.length
+        }
+        
+    }
+    return acc
+}
+
+console.log(pRemoverAndSumLength3(test1));
+
+
+function pRemoverAndSumLength4(strArr) {
+    
+    return strArr.reduce((acc, curr) => {
+        if (curr.includes('p')) {  
+            acc = acc + curr.length;  
+        }
+        return acc;
+    }, 0);
+}
+
+console.log(pRemoverAndSumLength4(test1));
+
+//2) dato un array di numeri, moltiplicarli per il loro indice
+//   rimuovere quelli maggiori di 1000
+//   e restiturli in formato stringa, separati da punto e virgola
+
+function multiplyByIndexRemoveLess1000AndReturnStrings(nArr) {
+    let timesIndexArr = nArr.map((el,i) => el*i)
+    let lessThan1000 = timesIndexArr.filter(el=> el<1000)
+    let strArray = lessThan1000.reduce ((acc,curr) => acc + String(curr) + ';','')
+    return strArray
+}
+
+console.log(multiplyByIndexRemoveLess1000AndReturnStrings(test2));
+
+
+function multiplyByIndexRemoveLess1000AndReturnStrings2(nArr) {
+    return nArr.map((el,i) => el*i)
+                    .filter (el=> el<1000 )
+                    .reduce ((acc,curr) => acc + String(curr) + ';','')
+}
+
+console.log(multiplyByIndexRemoveLess1000AndReturnStrings2(test2));
+
+function multiplyByIndexRemoveLess1000AndReturnStrings3(nArr) {
+    let acc = ''
+    for (const curr of nArr) {
+        if ((curr*i)<1000) {
+            acc = acc + curr
+        }
+        
+    }
+    return acc
+}
+
+console.log(multiplyByIndexRemoveLess1000AndReturnStrings3(test2));
+//3) data una stringa, eliminare tutte le parole più corte di 4 caratteri
+//   e restituirle in un array ordinate per lunghezza dalla piu lunga
+
