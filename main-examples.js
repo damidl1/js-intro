@@ -237,3 +237,48 @@ function convertToNumbersAndSummAll2(str) {
  }
  
   console.log(convertToNumbersAndSummAll4(testString));
+
+
+  // 1) Dato un array di stringhe,
+  //    eliminare tutte quelle che contengono la lettera p
+  //    e ritornare la somma delle lunghezze rimanenti
+
+    const test1 = ['pippo', 'pluto', 'qui', 'quo', 'qua', 'paperone']
+
+  // 2) Dato un array di numeri, moltiplicarli per il loro indice
+  //    rimuovere queli maggiori di 1000
+  //    e restituirli in formato stringa, separati da punto e virgola
+
+    const test2 = [100, 10, 24, -20, 300, 6, 100, 300];
+
+  // 3) Data una stringa, eliminare tutte le parole più corte di 4 caratteri
+  //    e restituirle in un array ordinate per lunghezza dalla più lunga
+
+    const test3 = 'ho fatto il bucato ieri sera ma si è tinto tutto di rosso';
+
+
+
+
+
+
+
+    function removePAndSumLenght(arr) {   // mapping e filter // sempre meglio fare prima la filter se possibile
+        const removeP = arr.filter( el => el.includes('p'));
+        console.log("🚀 ~ file: main-examples.js:267 ~ removePAndSumLenght ~ removeP:", removeP)
+        const wordsLength = removeP.map(el => el.length);
+        console.log("🚀 ~ file: main-examples.js:269 ~ removePAndSumLenght ~ wordsLength:", wordsLength)
+        const sum = removeP * (wordsLenght + wordsLength)
+
+        return sum;
+        
+        
+        
+        // const onlyPositiveArray = arr.filter( el => el >= 0 );  //operazione di filtraggio
+       
+        // const squaredArray = onlyPositiveArray.map( el => el ** 2 );  // elevazione di el al quadrato con **
+        
+        // return squaredArray;
+    }
+    
+    
+    console.log(removePAndSumLenght(test1));
