@@ -109,7 +109,7 @@
 
 
 //  const square4 = number => number * number;      // funzione corta, quando si può eseguire in una linea di codice si può usare la lambda function, 
-//                                                 //  quando si ha un unico parametro in ingresso non sono neanche obbligato a mettere le tonde
+                                                   //  quando si ha un unico parametro in ingresso non sono neanche obbligato a mettere le tonde
  
 //  const pow = (base, exponent)  => base ** exponent;     // se invece si hanno più parametri le parentesi sono obbligatorie
  
